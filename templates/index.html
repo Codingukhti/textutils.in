@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Remove Punctuation - Homepage</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  </head>
+<style>
+    /* General Styles */
+/* Style the form container */
+.form-container {
+        margin: 50px auto;
+        max-width: 800px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Style the form */
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Style the textarea */
+    textarea {
+        margin: 20px 0;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        font-size: 16px;
+    }
+
+    /* Style the checkbox label */
+    label {
+        font-size: 16px;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    /* Style the submit button */
+    button[type='submit'] {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+    /* Add hover effect to submit button */
+    button[type='submit']:hover {
+        background-color: #3e8e41;
+    }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  animation: slideIn 1s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+p {
+  font-size: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Main Content */
+main {
+  max-width: 960px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Call to Action Section */
+.cta-section {
+  background-color: #f1f1f1;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  animation: slideIn 1s ease forwards;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">TextUtils.in</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+    
+        </ul>
+      </div>
+    <main>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Welcome to TextUtils!</strong> You can do anything with your text here!
+    </div>
+    <header>
+      <h1>Remove Punctuation</h1>
+      <p>Quickly remove punctuation from text</p>
+    </header>
+    
+    
+    <div class="container">
+    
+      <form action='/analyze' method='get'>
+    
+    
+    
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Enter your text here and let Text Utils do the magic</label>
+        <textarea class="form-control" name='text' id="exampleFormControlTextarea1" rows="9"></textarea>
+      </div>
+    
+    <div class="custom-control custom-switch">
+      <input type="checkbox" name="removepunc" class="custom-control-input" id="customSwitch1">
+      <label class="custom-control-label" for="customSwitch1">Remove Punctuations</label>
+    </div>
+    
+      <div class="custom-control custom-switch">
+      <input type="checkbox" name="fullcaps" class="custom-control-input" id="customSwitch2">
+      <label class="custom-control-label" for="customSwitch2">UPPERCASE</label>
+    </div>
+    
+      <div class="custom-control custom-switch">
+      <input type="checkbox"  name="newlineremover" class="custom-control-input" id="customSwitch3">
+      <label class="custom-control-label" for="customSwitch3">New Line Remover</label>
+    </div>
+    
+      <div class="custom-control custom-switch">
+      <input type="checkbox"  name="extraspaceremover" class="custom-control-input" id="customSwitch4">
+      <label class="custom-control-label" for="customSwitch4">Extra Spaces Remover</label>
+    </div>
+    
+    <button type="submit" class="btn btn-dark mt-2">Analyze Text</button>
+        </form>
+    </div>
+    
+    
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <footer>
+      <p>&copy; 2023 Remove Punctuation. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
